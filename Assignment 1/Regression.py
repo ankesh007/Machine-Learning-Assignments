@@ -4,7 +4,9 @@ import sys
 
 # Defining a generalized regression class
 # By default, Regression class behaves as Linear Regression Class
-# For other types of Regression, inherit the Regression Class and Override evaluate and getGradient Method
+# For other types of Regression, inherit the Regression Class and Override needed methods
+# Eg: For Logistic Regression, override evaluate method
+# For Weighted Local Regression, override predict method
 
 class Regression:
 
@@ -74,6 +76,14 @@ class Regression:
 		aux_grad=np.matmul(np.transpose(x),aux_loss)
 		return (-1*aux_grad)
 
+	def L2norm(self,x):
+		temp_norm=np.linalg.norm(x)
+		return temp_norm
+
+	def L2normMatrixRowWise(self,x):
+		temp_norm=np.linalg.norm(x,axis=1,keepdims=True)
+		return temp_norm
+
 
 	def train(self,learning_rate=0.01,epsilon=0.1,batch_mode=False,batch_size=1000,log_every_epoch=100):
 
@@ -111,12 +121,19 @@ class Regression:
 
 			if(self.epoch%log_every_epoch==0):
 				print ("epoch: ",self.epoch," ",self.getLoss(self.x,self.y))
+		print(self.theta)
 
+	def solveAnalytically(self):
+		transpose_x=np.transpose(self.x)
+		pseudo_val=np.matmul(transpose_x,self.x)
+		aux_var=np.matmul(transpose_x,self.y)
+		pseudo_inv=np.linalg.inv(pseudo_val)
+		self.theta=np.matmul(pseudo_inv,aux_var)
 
 	def predict(self,x):
 		temp_x=x
 		if(self.has_normalized_x==True):
-			temp_x=self.normalize(x,self.x_mu,self.x_sigma)
+			temp_x=self.normalize(temp_x,self.x_mu,self.x_sigma)
 		modified_x=self.append_1(temp_x)
 		temp_eval=self.evaluate(modified_x)
 		if(self.has_normalized_y==True):
