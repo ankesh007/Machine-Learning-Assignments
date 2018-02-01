@@ -57,6 +57,10 @@ class Regression:
 	def normalize(self,x,mu,sigma):
 		return (x-mu)/sigma
 
+	def unnormalize(self,x,mu,sigma):
+		return (x*sigma + mu)
+
+	# Must be overridden if different from Linear Regression
 	def evaluate(self,x):
 		return np.matmul(x,self.theta)
 
@@ -114,10 +118,11 @@ class Regression:
 		if(self.has_normalized_x==True):
 			temp_x=self.normalize(x,self.x_mu,self.x_sigma)
 		modified_x=self.append_1(temp_x)
-		return self.evaluate(modified_x)
+		temp_eval=self.evaluate(modified_x)
+		if(self.has_normalized_y==True):
+			temp_eval=self.unnormalize(temp_eval,self.y_mu,self.y_sigma)
 
-			# if(self.epoch==100):
-			# 	break
+		return temp_eval
 
 #############################################
 #############For Testing, uncomment below code#########

@@ -26,7 +26,7 @@ def main(path_x,path_y):
 
 	# print (myReg.x.shape)
 	# print (myReg.y.shape)
-	myReg.train(log_every_epoch=50,learning_rate=0.001,epsilon=0.00001)
+	myReg.train(log_every_epoch=50,learning_rate=0.01,epsilon=0.0001)
 	# print (myReg.train_steps)
 	print (myReg.epoch)
 	print (myReg.getLoss(myReg.x,myReg.y))
