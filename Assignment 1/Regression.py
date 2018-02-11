@@ -36,8 +36,9 @@ class Regression:
 			self.y_mu=0
 			self.y_sigma=1.0
 
+		self.unappended_x=np.copy(temp_x)
 		self.x=self.append_1(temp_x)
-		self.y=temp_y
+		self.y=np.copy(temp_y)
 		[instances,parameters]=self.x.shape
 		self.theta=np.zeros((parameters,1))
 		self.epoch=0
@@ -71,6 +72,7 @@ class Regression:
 		temp_loss=np.transpose(aux_diff)
 		return 0.5*(np.matmul(temp_loss,aux_diff))
 
+	# Must be overridden if different from Linear Regression
 	def getGradient(self,x,y):
 		aux_loss=(y-self.evaluate(x))
 		aux_grad=np.matmul(np.transpose(x),aux_loss)
@@ -83,6 +85,9 @@ class Regression:
 	def L2normMatrixRowWise(self,x):
 		temp_norm=np.linalg.norm(x,axis=1,keepdims=True)
 		return temp_norm
+
+	def initialise_theta(self):
+		self.theta=self.theta*0
 
 
 	def train(self,learning_rate=0.01,epsilon=0.1,batch_mode=False,batch_size=1000,log_every_epoch=100):
@@ -121,8 +126,9 @@ class Regression:
 
 			if(self.epoch%log_every_epoch==0):
 				print ("epoch: ",self.epoch," ",self.getLoss(self.x,self.y))
-		print(self.theta)
+		# print(self.theta)
 
+	# Solving for theta using Normal Equation
 	def solveAnalytically(self):
 		transpose_x=np.transpose(self.x)
 		pseudo_val=np.matmul(transpose_x,self.x)
@@ -131,7 +137,7 @@ class Regression:
 		self.theta=np.matmul(pseudo_inv,aux_var)
 
 	def predict(self,x):
-		temp_x=x
+		temp_x=np.copy(x)
 		if(self.has_normalized_x==True):
 			temp_x=self.normalize(temp_x,self.x_mu,self.x_sigma)
 		modified_x=self.append_1(temp_x)
