@@ -3,7 +3,9 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as draw
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 class LinearRegression(Regression):
 
@@ -30,7 +32,8 @@ def plotPoints_Hypothesis(myReg,filename):
 	plt.savefig(filename+'.png')
 
 def plotContour(myReg,filename):
-
+	print("**************Contour Analysis*****************")
+	myReg.initialise_theta()
 	delta = 0.025
 	x = np.arange(-0.5, 3.025, delta)
 	y = np.arange(-0.5, 3.025, delta)
@@ -42,8 +45,32 @@ def plotContour(myReg,filename):
 	plt.title('Contours and Path Traversed')
 	plt.xlabel('Theta0')
 	plt.ylabel('Theta1')
-	plt.ion()
-	myReg.train(log_every_epoch=30,learning_rate=0.0001,epsilon=0.000001,plot=True)
+	myReg.train(log_every_epoch=40,learning_rate=0.0001,epsilon=0.000001,plot=True)
+	# plt.ion()
+	print("**************Ended-> Click Cross Button*****************")
+	plt.show()
+	plt.savefig(filename+'.png')
+
+def drawSurface(myReg,filename):
+	print("**************Surface Analysis*****************")
+	delta = 0.025
+	x = np.arange(-5, 5, delta)
+	y = np.arange(-5, 5, delta)
+	X, Y = np.meshgrid(x, y)
+	Z=(np.vectorize(myReg.custom_loss))(X,Y)
+	# print (X.shape,Z.shape)
+
+	fig=plt.figure()
+	ax = fig.gca(projection='3d')
+	surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,linewidth=0.2)
+
+	fig.colorbar(surf, shrink=0.5, aspect=5)
+	plt.xlabel("Theta0")
+	plt.ylabel("Theta1")
+	plt.title("Plotting J(theta) against theta")
+	myReg.train(log_every_epoch=40,learning_rate=0.0001,epsilon=0.000001,plot=False,plot3D=True)
+	print("**************Ended-> Click Cross Button*****************")
+	plt.show()
 	plt.savefig(filename+'.png')
 
 def main(path_x,path_y):
@@ -52,30 +79,12 @@ def main(path_x,path_y):
 	temp_y=pd.read_csv(path_y,header=None,sep=',')
 
 	myReg=LinearRegression(pd_x=temp_x,pd_y=temp_y,normalize_x=True)
-	# myReg.train(log_every_epoch=50,learning_rate=0.021,epsilon=0.000001,plot=False)
 
+	drawSurface(myReg,"hey")
 	plotContour(myReg,"LinearRegressionContours")
 	plotPoints_Hypothesis(myReg,"LinearRegressionHypothesis")
 	print ("*****Theta******")
 	print(myReg.theta)
-	# print (X)
-	# print("**")
-	# print (Y)
-
-
-
-
-	# print(myReg.theta)
-	# myReg.solveAnalytically()
-
-	# print (myReg.train_steps)
-	# print (myReg.epoch)
-	# print (myReg.getLoss(myReg.x,myReg.y))
-	
-	# temp=np.concatenate((myReg.predict(temp_x.values),temp_y.values),axis=1)
-	# temp=np.concatenate((temp,),axis=1)
-	# print(temp)
-
 
 if __name__=="__main__":
 

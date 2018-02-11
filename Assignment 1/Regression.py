@@ -3,6 +3,9 @@ import pandas as pd
 import sys
 import matplotlib.pyplot as plt
 import time
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 # Defining a generalized regression class
 # By default, Regression class behaves as Linear Regression Class
@@ -90,9 +93,11 @@ class Regression:
 
 	def initialise_theta(self):
 		self.theta=self.theta*0
+		self.epoch=0
+		self.train_steps=0
 
 
-	def train(self,learning_rate=0.01,epsilon=0.1,batch_mode=False,batch_size=1000,log_every_epoch=100,plot=False,pause_time=0.3):
+	def train(self,learning_rate=0.01,epsilon=0.1,batch_mode=False,batch_size=1000,log_every_epoch=100,plot=False,pause_time=0.2,plot3D=False):
 
 		[instances,parameters]=self.x.shape
 		[_,y_shape]=self.y.shape
@@ -125,8 +130,16 @@ class Regression:
 					# plt.draw()
 					if(self.epoch%log_every_epoch==0):
 						plt.pause(pause_time)
-						# plt.show()
-						# plt.close()
+
+				if(plot3D==True):
+					# print(self.theta[0])
+					# print(self.theta[1])
+					# print(self.getLoss(self.x,self.y))
+					plt.plot(self.theta[0],self.theta[1],self.getLoss(self.x,self.y)[0],'ro')
+					# plt.draw()
+					if(self.epoch%log_every_epoch==0):
+						plt.pause(pause_time)
+				
 				current_loss=self.getLoss(train_x,train_y)
 
 				if(abs(current_loss-prev_loss)<epsilon):
