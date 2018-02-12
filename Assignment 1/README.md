@@ -1,6 +1,6 @@
 # Implementing Regression Algorithms and GDA
 
-The assignment is level 1 introduction to ***regression*** algorithms and ***Gaussian Discriminant Analysis(GDA)***. More can be read on *ProblemStatement.pdf*.
+The assignment is level 1 introduction to ***regression*** algorithms and ***Gaussian Discriminant Analysis(GDA)*** . More can be read on *ProblemStatement.pdf*.
 
 The assignment consists on 4 parts. The 4 parts are placed in folder *Question {1,2,3,4}* respectively. ***Report.pdf*** captures various nuances of assignment and nice observations and inferences. 
 
