@@ -2,7 +2,7 @@
 
 The assignment is level 1 introduction to ***regression*** algorithms and ***Gaussian Discriminant Analysis(GDA)*** . More can be read on *ProblemStatement.pdf*.
 
-The assignment consists on 4 parts. The 4 parts are placed in folder *Question {1,2,3,4}* respectively. ***Report.pdf*** captures various nuances of assignment and nice observations and inferences. 
+The assignment consists on 4 parts. The 4 parts are placed in folder *Q{1,2,3,4}* respectively. ***Report.pdf*** captures various nuances of assignment and nice observations and inferences. 
 
 A generalized ***Regression*** class was created, which by default supported *Linear Regression*. Other necessary *Regression* classes can inherit it as base class and ***override*** necessary methods. Look at code for better understanding.
 
