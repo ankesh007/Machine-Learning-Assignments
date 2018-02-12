@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+epsilon=0.000001
+
 class LogisticRegression(Regression):
 
 	def __init__(self,pd_x,pd_y,normalize_x=True,normalize_y=False):
@@ -70,30 +72,26 @@ def plotPoints_Hypothesis(myReg,filename):
 	plt.savefig(filename+'.png')
 
 
-
-
 def main(path_x,path_y):
 
 	temp_x=pd.read_csv(path_x,header=None,sep=',')
 	temp_y=pd.read_csv(path_y,header=None,sep=',')
 
 	myReg=LogisticRegression(pd_x=temp_x,pd_y=temp_y,normalize_x=True)
-	myReg.trainNewton(epsilon=0.0000001)
+	myReg.trainNewton(epsilon=epsilon)
 	print("*****Theta******")
 	print(myReg.theta)
 	print("*****Epochs*****")
 	print(myReg.epoch)
-	plotPoints_Hypothesis(myReg,"Logistic")
-	# myReg.solveAnalytically()
-	# print (myReg.train_steps)
-	# print (myReg.epoch)
-	# print (myReg.getLoss(myReg.x,myReg.y))
-	
-	# temp=np.concatenate((myReg.predict(temp_x.values),temp_y.values),axis=1)
-	# temp=np.concatenate((temp,myReg.predict(temp_x.values)),axis=1)
-	# print(temp)
-
+	plotPoints_Hypothesis(myReg,"LogisticRegression-Err="+str(epsilon))
 
 if __name__=="__main__":
+
+	if(len(sys.argv)<3):
+		print("Usage: <script> <x_data_path> <y_data_path> <epsilon-optional>")
+		exit()
+
+	if(len(sys.argv)==4):
+		epsilon=float(sys.argv[3])
 
 	main(sys.argv[1],sys.argv[2])

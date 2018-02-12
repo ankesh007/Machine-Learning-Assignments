@@ -51,27 +51,22 @@ class LocallyWeightedLinearRegression(Regression):
 
 		return temp_eval
 
-def plotPoints_Hypothesis(myReg,prediction,filename):
+def plotPoints_Hypothesis(myReg,prediction,filename,tau):
 
 	plt.figure(1)
 	fig, ax = plt.subplots()
 	plt.xlabel("Normalized X")
-	plt.ylabel("Normalized Y")
-	plt.title("LWLR- Data and Hypothesis")
-	# print(myReg.unappended_x[(myReg.y[:,0]==1)])
+	plt.ylabel("Y")
+	plt.title("LWLR- Data and Hypothesis: Tau="+str(tau))
 	argsort_val=myReg.unappended_x[:,0].argsort()
 	ax.plot(myReg.unappended_x,myReg.y,'ro',label='data')
-	# print(myReg.unappended_x[argsort_val].shape)
-	# print(argsort_val)
-	# print(myReg.unappended_x[argsort_val][:,:,0])
 	ax.plot(myReg.unappended_x[argsort_val],prediction[argsort_val],'k',label='hypothesis')
-
 	legend = ax.legend(loc='upper left',fontsize='x-small')
 	legend.get_frame().set_facecolor('#00FFCC')
 	plt.savefig(filename+'.png')
 
 
-def main(path_x,path_y):
+def main(path_x,path_y,tau):
 
 	temp_x=pd.read_csv(path_x,header=None,sep=',')
 	temp_y=pd.read_csv(path_y,header=None,sep=',')
@@ -84,23 +79,16 @@ def main(path_x,path_y):
 	prediction=np.zeros([0,1])
 
 	for i in range(instances):
-		query_x=myReg.predict(temp_x_val[i:i+1],100)
+		query_x=myReg.predict(temp_x_val[i:i+1],tau)
 		prediction=np.concatenate((prediction,query_x),axis=0)
-		# print(query_x)
 
-	plotPoints_Hypothesis(myReg,prediction,'LWLR')
-	# print(np.concatenate((prediction,temp_y.values),axis=1))
-	# print(myReg.predict(x=temp_x.values[2:3,0:1],tau=0.2),myReg.y[2])
-	# myReg.solveAnalytically()
-	# myReg.train(log_every_epoch=50,learning_rate=0.01,epsilon=0.0001)
-	# print (myReg.train_steps)
-	# print (myReg.epoch)
-	# print (myReg.getLoss(myReg.x,myReg.y))
-	
-	# temp=np.concatenate((myReg.predict(temp_x.values),temp_y.values),axis=1)
-	# temp=np.concatenate((temp,myReg.predict(temp_x.values)),axis=1)
+	plotPoints_Hypothesis(myReg,prediction,'LWLR-tau='+str(tau),tau)
 
 
 if __name__=="__main__":
 
-	main(sys.argv[1],sys.argv[2])
+	if(len(sys.argv)<4):
+		print("Usage: <script> <x_data_path> <y_data_path> <tau>")
+		exit()
+
+	main(sys.argv[1],sys.argv[2],float(sys.argv[3]))

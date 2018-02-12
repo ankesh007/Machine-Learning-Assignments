@@ -68,7 +68,9 @@ class GDA:
 
 		transpose_x=np.transpose(temp_x)
 		sum_indicator=np.sum(indicator)
-		return np.linalg.inv(np.matmul(transpose_x,self.x)/sum_indicator)
+		temp=(np.matmul(transpose_x,self.x)/sum_indicator)
+		temp=np.linalg.inv(temp)
+		return temp
 
 	def getCommonSigma(self):
 		indicator=(self.y==0)
@@ -78,7 +80,9 @@ class GDA:
 
 		transpose_x=np.transpose(temp_x)
 		sum_indicator=(self.x.shape)[0]
-		return np.linalg.inv(np.matmul(transpose_x,self.x)/sum_indicator)
+		temp=(np.matmul(transpose_x,self.x)/sum_indicator)
+		temp=np.linalg.inv(temp)
+		return temp
 
 	def setParameters(self,common_sigma=False):
 		self.phi=self.getPhi()
@@ -160,9 +164,8 @@ def plotPoints_LinearHypothesis(myReg,filename):
 	plt.savefig(filename+'.png')
 
 
-def plotPoints_QuadHypothesis(myReg,filename,other_quad_part):
+def plotPoints_QuadHypothesis(myReg,filename,other_quad_part,linear=True):
 
-	print(other_quad_part)
 	plt.figure(1)
 	fig, ax = plt.subplots()
 	plt.xlabel("Normalized X1")
@@ -179,6 +182,9 @@ def plotPoints_QuadHypothesis(myReg,filename,other_quad_part):
 	if(other_quad_part==True):
 		ax.plot(arr,c,'k')
 
+	if(linear==True):
+		ax.plot(arr,myReg.getX2Linear(arr),'y',label='Hypothesis Linear')
+
 	legend = ax.legend(loc='upper left',fontsize='x-small')
 	legend.get_frame().set_facecolor('#00FFCC')
 	plt.savefig(filename+'.png')
@@ -192,7 +198,14 @@ def main(path_x,path_y,draw_other_quadratic=False):
 	myReg=GDA(pd_x=temp_x,pd_y=temp_y,normalize_x=True)
 	myReg.setParameters(common_sigma=True)
 	myReg.setParameters(common_sigma=False)
+	print(myReg.sigma0)
+	print(myReg.sigma1)
+	print(myReg.mu1)
+	print(myReg.mu0)
+	print(myReg.sigma)
+	print(myReg.phi)
 
+	exit()	
 	plotPoints_QuadHypothesis(myReg,"GDAQuad",draw_other_quadratic)
 	plotPoints_LinearHypothesis(myReg,"GDALinear")
 
