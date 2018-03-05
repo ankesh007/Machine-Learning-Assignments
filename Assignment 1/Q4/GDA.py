@@ -80,7 +80,7 @@ class GDA:
 
 		transpose_x=np.transpose(temp_x)
 		sum_indicator=(self.x.shape)[0]
-		temp=(np.matmul(transpose_x,self.x)/sum_indicator)
+		temp=(np.matmul(transpose_x,temp_x)/sum_indicator)
 		temp=np.linalg.inv(temp)
 		return temp
 
@@ -205,7 +205,7 @@ def main(path_x,path_y,draw_other_quadratic=False):
 	print(myReg.sigma)
 	print(myReg.phi)
 
-	exit()	
+	# exit()	
 	plotPoints_QuadHypothesis(myReg,"GDAQuad",draw_other_quadratic)
 	plotPoints_LinearHypothesis(myReg,"GDALinear")
 
