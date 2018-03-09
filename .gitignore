@@ -1,4 +1,4 @@
-Assignment 1/ignore
-Assignment 1/__pycache__
-Assignment 1/*.png
-Assignment 1/*.pyc
+*/ignore
+*__pycache__
+*.png
+*.pyc
