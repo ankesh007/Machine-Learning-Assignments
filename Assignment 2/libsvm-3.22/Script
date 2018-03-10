@@ -1,0 +1,3 @@
+./svm-predict ../Dataset/mnist_libsvm/test_scale.csv train_scale.csv.model output | grep -o "[0-9.]*%"
+./svm-train -s 0 -t 2 -c 1 -g 0.05 ../Dataset/mnist_libsvm/train_scale.csv gaussian
+./svm-train -s 0 -t 2 -c 1 -g 0.05 -v 10 ../Dataset/mnist_libsvm/train_scale.csv gaussian_cross_1
