@@ -5,7 +5,7 @@ The assignment is level 1 introduction to ***Naive Bayes Classifier*** algorithm
 The assignment consists on 2 parts. The trained models for the same can be found at:[Model](https://drive.google.com/open?id=1p4G8OKkiDIdbl0lVhqRG1OgxNayQ2HDE) 
 
 
-***Multinomial Naive Bayes *** was implemented for text classification and linear kernel SVM was implemented. Also, experiments were run on [libsvm](http://www.csie.ntu.edu.tw/~cjlin/libsvm) *linear* and *gaussian* kernel.
+***Multinomial Naive Bayes*** was implemented for text classification and linear kernel SVM was implemented. Also, experiments were run on [libsvm](http://www.csie.ntu.edu.tw/~cjlin/libsvm) *linear* and *gaussian* kernel.
 
 For optimising self-implemented SVM, [this](http://ttic.uchicago.edu/~nati/Publications/PegasosMPB.pdf) paper was referred.
 

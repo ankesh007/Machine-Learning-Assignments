@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  11 MAR 2018 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  11 MAR 2018 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Assignment 1.tex"
-(./Assignment 1.tex
+**"Assignment 2.tex"
+(./Assignment 2.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -355,8 +355,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip51
 )
-(./Assignment 1.aux)
-\openout1 = `"Assignment 1.aux"'.
+(./Assignment 2.aux)
+\openout1 = `"Assignment 2.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -452,9 +452,9 @@ LaTeX Info: Redefining \ref on input line 21.
 LaTeX Info: Redefining \pageref on input line 21.
 LaTeX Info: Redefining \nameref on input line 21.
 
-(./Assignment 1.out) (./Assignment 1.out)
+(./Assignment 2.out) (./Assignment 2.out)
 \@outlinefile=\write3
-\openout3 = `"Assignment 1.out"'.
+\openout3 = `"Assignment 2.out"'.
 
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 28.
 
@@ -675,10 +675,10 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 568.
 3.png> <./9_4_1.png>] [7 <./9_4_2.png> <./9_7_3.png>] [8 <./7_2_1.png> <./7_2_2
 .png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 568.
- (./Assignment 1.aux)
+ (./Assignment 2.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 568.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 568.
-Package rerunfilecheck Info: File `"Assignment 1".out' has not changed.
+Package rerunfilecheck Info: File `"Assignment 2".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 568.
  ) 
@@ -697,7 +697,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
 latino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "Assignment 1.pdf" (8 pages, 325567 bytes).
+Output written on "Assignment 2.pdf" (8 pages, 325606 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  105 compressed objects within 2 object streams
