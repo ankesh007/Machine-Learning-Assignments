@@ -5,3 +5,5 @@
 Assignment 2/Dataset
 *.zip
 *.ipynb_checkpoints/
+Assignment 2/model_SVM
+Assignment 2/NaiveBayesModel
