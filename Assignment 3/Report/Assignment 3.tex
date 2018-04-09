@@ -9,7 +9,7 @@
 \usepackage{listings}
 \usepackage{grffile}
 \usepackage{hyperref}
-\graphicspath{{./../Plots/}}
+\graphicspath{{./../NewPlot/}}
 \geometry{
   top=20mm,
 }
@@ -177,7 +177,7 @@ Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy 
 	\item Accuracy with Logistic Learner : Train Accuracy=45.79\%. Test Accuracy=38.33\%.
 	\item Accuracy with NN as specified in Assignment. Train Accuracy=90\%. Test Accuracy=85\%.
 	\item Our model \italb{outperforms} Logistic Regression model. 
-	\item Bad performance of Logistic Learner is justified from the fact that logistic regression is good to model \italb{linear boundaries}, whereas clearly, our model is able to identify non-linear patterns.
+	\item Bad performance of Logistic Learner is justified from the fact that logistic regression is good to model \italb{linear boundaries}, whereas data is non-linear. Clearly, our model is able to identify non-linear patterns.
 
 \begin{figure}[h]
 \vspace*{-2cm}
@@ -195,12 +195,12 @@ Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy 
 \vspace*{-2cm}
 \hspace*{-1.5cm}
 \centering
-\includegraphics[scale=0.8]{NN_DB_Train.png}
+\includegraphics[scale=0.8]{NN_DB_Train_5Best.png}
 \vspace*{-1.5cm}
 \caption{Decision Boundary NN for 5 hidden units(Train Above, Test Below)}
 \hspace*{-1.5cm}
 \centering
-\includegraphics[scale=0.8]{NN_DB_Test.png}
+\includegraphics[scale=0.8]{NN_DB_Test_5Best.png}
 \end{figure}
 
 \begin{figure}[h]
@@ -219,7 +219,7 @@ Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy 
 \vspace*{-2cm}
 \hspace*{-1.5cm}
 \centering
-\includegraphics[scale=0.8]{NN_DB_Test_3.png}
+\includegraphics[scale=0.8]{NN_DB_Test_3Best.png}
 \vspace*{-1.5cm}
 \caption{Decision Boundary NN for 3(above) and 10(below) hidden units along with Test data}
 \hspace*{-1.5cm}
@@ -261,12 +261,12 @@ Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy 
 \end{tabular}
 \end{center}
 	\item With 1 layer, best decision boundary is obtained for 3/5 hidden units.
-	\item Lower nodes result in underfitting and poor train/test scores.
 	\item Increasing hidden units beyond that starts to model noise in data. Decision boundary becomes overly complex, thereby increase train accuracy, but test accuracy starts deteriorating.
+	\item Lower nodes result in underfitting and poor train/test scores.
 \begin{figure}[h]
 \hspace*{-1.5cm}
 \centering
-\includegraphics[scale=0.8]{NN_DB_Test_2layer.png}
+\includegraphics[scale=0.8]{NN_DB_Test_2Layer.png}
 \vspace*{-1.5cm}
 \caption{Decision Boundary 2 layer NN along with Test data}
 \end{figure}
@@ -274,7 +274,19 @@ Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy 
 	\item Comparing 2 layer model with 1 layer model, 2 layer model outperforms 1 layer model in test set accuracy(by $\approx 1\%$).
 	\item 2 Hidden layer models have higher representation and learning power as it undergoes 3 non-linear transforms before producing output.
 \end{enumerate}
-
-
+\bld{Mnist Dataset}
+\begin{enumerate}
+	\item LibSVM train accuracy=99.87\%.Test Accuracy=98.83\%.
+	\item Perceptron train accuracy=99.14\%. Test Accuracy=98.41\%.
+	\item Both give comparable performance. A single perceptron is equivalent to logistic classfier, with euclidean loss function.
+	\item There were 2 stopping criteria, either $\epsilon<10^{-4}$, or number of $epochs>800$ and still not converged.
+	\item Train accuracy=99.06\%. Test Accuracy=97.42\%.
+	\item With constant learning rate and sigmoid, train accuracy=99.5\% and test accuracy=98.2\% with 200 epochs.
+	\item The results are not at par with previous single perceptron. What is troublesome is decay of learning rate $\propto \sqrt{iterations}$.
+	\item Single perceptron and linear SVM giving high accuracies indicate linear separability of data. For such discriminative task, it might not be wise choice to throw powerful neural networks. Maybe, given time they may outperform linear separating models, but cost may outweigh utility gained. 
+	\item With RELU, train accuracy=99.2\% and test accuracy=98.8\% was obtained. This was acheived in 110 epochs.
+	\item RELU activation gives best accuracy on both train and test data. Also, it shows quite faster convergence as compared with decaying learning rate in sigmoid. 
+	\item Constant learning rate model outperformed Decaying learning rate model.
+\end{enumerate}
 
 \end{document}

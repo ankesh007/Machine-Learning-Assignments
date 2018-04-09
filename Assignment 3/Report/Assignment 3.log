@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  9 APR 2018 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.26)  10 APR 2018 01:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -493,11 +493,11 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 28.
 
-<./../Plots/VanillaDT.png, id=4, 650.43pt x 505.89pt>
-File: ./../Plots/VanillaDT.png Graphic file (type png)
+<./../NewPlot/VanillaDT.png, id=4, 650.43pt x 505.89pt>
+File: ./../NewPlot/VanillaDT.png Graphic file (type png)
 
-<use ./../Plots/VanillaDT.png>
-Package pdftex.def Info: ./../Plots/VanillaDT.png used on input line 34.
+<use ./../NewPlot/VanillaDT.png>
+Package pdftex.def Info: ./../NewPlot/VanillaDT.png used on input line 34.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (35.3346pt too wide) in paragraph at lines 32--36
@@ -524,13 +524,13 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/it' tried instead on input line 44.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./../Plots/VanillaDT.png>]
- <./../Plots/VanillaDtPruning.png, id=20, 650.43pt x 505.89pt>
-File: ./../Plots/VanillaDtPruning.png Graphic file (type png)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./../NewPlot/VanillaDT.png
+>] <./../NewPlot/VanillaDtPruning.png, id=20, 650.43pt x 505.89pt>
+File: ./../NewPlot/VanillaDtPruning.png Graphic file (type png)
 
-<use ./../Plots/VanillaDtPruning.png>
-Package pdftex.def Info: ./../Plots/VanillaDtPruning.png used on input line 53.
-
+<use ./../NewPlot/VanillaDtPruning.png>
+Package pdftex.def Info: ./../NewPlot/VanillaDtPruning.png used on input line 5
+3.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 51--55
@@ -543,12 +543,12 @@ File: omsppl.fd
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
- [2 <./../Plots/VanillaDtPruning.png>] <./../Plots/MedianDT.png, id=35, 650.43p
-t x 505.89pt>
-File: ./../Plots/MedianDT.png Graphic file (type png)
+ [2 <./../NewPlot/VanillaDtPruning.png>] <./../NewPlot/MedianDT.png, id=35, 650
+.43pt x 505.89pt>
+File: ./../NewPlot/MedianDT.png Graphic file (type png)
 
-<use ./../Plots/MedianDT.png>
-Package pdftex.def Info: ./../Plots/MedianDT.png used on input line 71.
+<use ./../NewPlot/MedianDT.png>
+Package pdftex.def Info: ./../NewPlot/MedianDT.png used on input line 71.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 69--73
@@ -576,18 +576,19 @@ Overfull \hbox (81.18791pt too wide) in paragraph at lines 79--80
  
  []
 
-<./../Plots/MedianDTPruning.png, id=36, 650.43pt x 505.89pt>
-File: ./../Plots/MedianDTPruning.png Graphic file (type png)
+<./../NewPlot/MedianDTPruning.png, id=36, 650.43pt x 505.89pt>
+File: ./../NewPlot/MedianDTPruning.png Graphic file (type png)
 
-<use ./../Plots/MedianDTPruning.png>
-Package pdftex.def Info: ./../Plots/MedianDTPruning.png used on input line 88.
+<use ./../NewPlot/MedianDTPruning.png>
+Package pdftex.def Info: ./../NewPlot/MedianDTPruning.png used on input line 88
+.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 86--90
  []|  [] 
  []
 
-[3 <./../Plots/MedianDT.png>]
+[3 <./../NewPlot/MedianDT.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
  []
@@ -600,24 +601,24 @@ x[]depth \OT1/zplm/m/n/10 = \OT1/ppl/m/n/10 10$,$\OML/zplm/m/it/10 min[]sample[
 eaf \OT1/zplm/m/n/10 =
  []
 
-[4 <./../Plots/MedianDTPruning.png>]
-<./../Plots/LogisticDB.png, id=60, 650.43pt x 505.89pt>
-File: ./../Plots/LogisticDB.png Graphic file (type png)
+[4 <./../NewPlot/MedianDTPruning.png>]
+<./../NewPlot/LogisticDB.png, id=60, 650.43pt x 505.89pt>
+File: ./../NewPlot/LogisticDB.png Graphic file (type png)
 
-<use ./../Plots/LogisticDB.png>
-Package pdftex.def Info: ./../Plots/LogisticDB.png used on input line 186.
+<use ./../NewPlot/LogisticDB.png>
+Package pdftex.def Info: ./../NewPlot/LogisticDB.png used on input line 186.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 184--188
  []|  [] 
  []
 
-<./../Plots/LogisticDB_Test.png, id=61, 650.43pt x 505.89pt>
-File: ./../Plots/LogisticDB_Test.png Graphic file (type png)
+<./../NewPlot/LogisticDB_Test.png, id=61, 650.43pt x 505.89pt>
+File: ./../NewPlot/LogisticDB_Test.png Graphic file (type png)
 
-<use ./../Plots/LogisticDB_Test.png>
-Package pdftex.def Info: ./../Plots/LogisticDB_Test.png used on input line 191.
-
+<use ./../NewPlot/LogisticDB_Test.png>
+Package pdftex.def Info: ./../NewPlot/LogisticDB_Test.png used on input line 19
+1.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 189--192
@@ -630,22 +631,24 @@ LaTeX Warning: Float too large for page by 104.99329pt on input line 192.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./../Plots/NN_DB_Train.png, id=62, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Train.png Graphic file (type png)
+<./../NewPlot/NN_DB_Train_5Best.png, id=62, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Train_5Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Train.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Train.png used on input line 198.
+<use ./../NewPlot/NN_DB_Train_5Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Train_5Best.png used on input line 
+198.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 196--200
  []|  [] 
  []
 
-<./../Plots/NN_DB_Test.png, id=63, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_5Best.png, id=63, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_5Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test.png used on input line 203.
+<use ./../NewPlot/NN_DB_Test_5Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_5Best.png used on input line 2
+03.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 201--204
@@ -658,24 +661,24 @@ LaTeX Warning: Float too large for page by 104.99329pt on input line 204.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./../Plots/NN_DB_Test_1Best.png, id=64, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_1Best.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_1Best.png, id=64, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_1Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_1Best.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_1Best.png used on input line 210
-.
+<use ./../NewPlot/NN_DB_Test_1Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_1Best.png used on input line 2
+10.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 208--212
  []|  [] 
  []
 
-<./../Plots/NN_DB_Test_2Best.png, id=65, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_2Best.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_2Best.png, id=65, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_2Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_2Best.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_2Best.png used on input line 215
-.
+<use ./../NewPlot/NN_DB_Test_2Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_2Best.png used on input line 2
+15.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 213--216
@@ -688,23 +691,24 @@ LaTeX Warning: Float too large for page by 104.99329pt on input line 216.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./../Plots/NN_DB_Test_3.png, id=66, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_3.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_3Best.png, id=66, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_3Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_3.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_3.png used on input line 222.
+<use ./../NewPlot/NN_DB_Test_3Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_3Best.png used on input line 2
+22.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 220--224
  []|  [] 
  []
 
-<./../Plots/NN_DB_Test_10Best.png, id=67, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_10Best.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_10Best.png, id=67, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_10Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_10Best.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_10Best.png used on input line 22
-7.
+<use ./../NewPlot/NN_DB_Test_10Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_10Best.png used on input line 
+227.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 225--228
@@ -717,24 +721,24 @@ LaTeX Warning: Float too large for page by 104.99329pt on input line 228.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./../Plots/NN_DB_Test_20Best.png, id=68, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_20Best.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_20Best.png, id=68, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_20Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_20Best.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_20Best.png used on input line 23
-4.
+<use ./../NewPlot/NN_DB_Test_20Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_20Best.png used on input line 
+234.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 232--236
  []|  [] 
  []
 
-<./../Plots/NN_DB_Test_40Best.png, id=69, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_40Best.png Graphic file (type png)
+<./../NewPlot/NN_DB_Test_40Best.png, id=69, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_40Best.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_40Best.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_40Best.png used on input line 23
-9.
+<use ./../NewPlot/NN_DB_Test_40Best.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_40Best.png used on input line 
+239.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 237--240
@@ -747,17 +751,17 @@ LaTeX Warning: Float too large for page by 104.99329pt on input line 240.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6 <./../Plots/LogisticDB.png> <./../Plots/LogisticDB_Test.png>] [7 <./../P
-lots/NN_DB_Train.png> <./../Plots/NN_DB_Test.png>] [8 <./../Plots/NN_DB_Test_1B
-est.png> <./../Plots/NN_DB_Test_2Best.png>] [9 <./../Plots/NN_DB_Test_3.png> <.
-/../Plots/NN_DB_Test_10Best.png>] [10 <./../Plots/NN_DB_Test_20Best.png> <./../
-Plots/NN_DB_Test_40Best.png>]
-<./../Plots/NN_DB_Test_2layer.png, id=123, 650.43pt x 505.89pt>
-File: ./../Plots/NN_DB_Test_2layer.png Graphic file (type png)
+[5] [6 <./../NewPlot/LogisticDB.png> <./../NewPlot/LogisticDB_Test.png>]
+[7 <./../NewPlot/NN_DB_Train_5Best.png> <./../NewPlot/NN_DB_Test_5Best.png>]
+[8 <./../NewPlot/NN_DB_Test_1Best.png> <./../NewPlot/NN_DB_Test_2Best.png>]
+[9 <./../NewPlot/NN_DB_Test_3Best.png> <./../NewPlot/NN_DB_Test_10Best.png>]
+[10 <./../NewPlot/NN_DB_Test_20Best.png> <./../NewPlot/NN_DB_Test_40Best.png>]
+<./../NewPlot/NN_DB_Test_2Layer.png, id=123, 650.43pt x 505.89pt>
+File: ./../NewPlot/NN_DB_Test_2Layer.png Graphic file (type png)
 
-<use ./../Plots/NN_DB_Test_2layer.png>
-Package pdftex.def Info: ./../Plots/NN_DB_Test_2layer.png used on input line 26
-9.
+<use ./../NewPlot/NN_DB_Test_2Layer.png>
+Package pdftex.def Info: ./../NewPlot/NN_DB_Test_2Layer.png used on input line 
+269.
 (pdftex.def)             Requested size: 520.3447pt x 404.71254pt.
 
 Overfull \hbox (49.56097pt too wide) in paragraph at lines 267--271
@@ -766,36 +770,38 @@ Overfull \hbox (49.56097pt too wide) in paragraph at lines 267--271
 
 [11
 
- <./../Plots/NN_DB_Test_2layer.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+ <./../NewPlot/NN_DB_Test_2Layer.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
  [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
  (./Assignment 3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 292.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 292.
 Package rerunfilecheck Info: File `"Assignment 3".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 292.
  ) 
 Here is how much of TeX's memory you used:
- 8826 strings out of 493029
- 130855 string characters out of 6136233
- 234997 words of memory out of 5000000
+ 8840 strings out of 493029
+ 131133 string characters out of 6136233
+ 234999 words of memory out of 5000000
  12174 multiletter control sequences out of 15000+600000
- 25471 words of font info for 73 fonts, out of 8000000 for 9000
+ 26644 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,7n,32p,334b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
-o/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pf
-b>
-Output written on "Assignment 3.pdf" (12 pages, 1652784 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on "Assignment 3.pdf" (12 pages, 1589662 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 73 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
