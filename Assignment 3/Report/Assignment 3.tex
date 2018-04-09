@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath,mathpazo}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{grffile}
+\usepackage{hyperref}
+\graphicspath{{./../Plots/}}
+\geometry{
+  top=20mm,
+}
+\newcommand{\boldvec}[1]{\boldsymbol{\vec{\textbf{#1}}}}
+\newcommand{\capvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\newcommand{\bld}[1]{\textbf{#1}}
+\newcommand{\ital}[1]{\textit{#1}}
+\newcommand{\italb}[1]{\textbf{\textit{#1}}}
+\begin{document}
+
+\title{Machine Learning- COL774 \\Assignment 3}
+\author{Ankesh Gupta\\2015CS10435}
+
+\date{}
+\maketitle
+
+
+\begin{figure}[h]
+\vspace*{-1.3cm}
+\hspace*{-2cm}
+\centering
+\includegraphics[scale=0.8]{VanillaDT.png}
+\vspace*{-1.5cm}
+\caption{Vanilla Decision Tree growth}
+\vspace*{-0.5cm}
+\end{figure}
+
+\section*{Decision Trees(DT)}
+\bld{Observations:}
+\begin{enumerate}
+	\item Some facts about Vanilla DT growth: node count of tree $= 7654$. Train Accuracy $=88.52\%$. Test Accuracy $=80.68\%$. Validation Accuracy $=79.83\%$.
+	\item We realise that our algorithm has \italb{overfitted} since their's a wide gap between train and validation/test accuracies. The validation/test accuracies even start decreasing whilst the training accuracy peaks.
+	\item Even though we have fully grown the tree, peak train accuracy was $\approx 89$. This is because of \italb{preprocessing} step which map many different numerical attributes to same value 0/1, which might overall making data instance attribute value same, for different labels. 
+	\item The plot indicates that we have learnt patterns corresponding to noise in data. Next part takes care of this.
+\end{enumerate}
+
+\begin{figure}[h]
+\vspace*{-0.5cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{VanillaDtPruning.png}
+\vspace*{-1.5cm}
+\caption{Pruning Vanilla Decision Tree}
+\vspace*{-0.5cm}
+\end{figure}
+\begin{enumerate}
+	\item Some facts about pruned Vanilla DT: node count of tree $= 2376$. Train Accuracy $=85.37\%$. Test Accuracy $=82.69\%$. Validation Accuracy $=83.77\%$.
+	\item This steps helps tree \italb{generalise} on the learning task. We see the gap between train and test accuracies \italb{bridge}.
+	\item Post pruning, train, test and validation accuracies all lie in a small range. This indicates our model is almost \italb{free from overfitting}.
+	\item The \italb{greedy approach} is quite visual from the plot that rise in validation accuracy is sharp at beginning and gradually slows to 0. Train accuracy also witness plummet in beginning.
+	\item Initial few pruned nodes are examples of severe \{noise/over\}fitting, as test and validation accuracies both show good increments.
+	\item Soon, validation crosses the test accuracy which again shows that we are starting to fit some noise of validation set, but this stops immediately. Hence, we have fitted different/necessary patterns.
+	\item This approach is very effective, as almost always reduces the size of tree greatly, without loosing on decision power. 
+\end{enumerate}
+\begin{figure}[h]
+\vspace*{-0.5cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{MedianDT.png}
+\vspace*{-1.5cm}
+\caption{Dynamic Median Splitting DT}
+\vspace*{-0.1cm}
+\end{figure}
+\begin{enumerate}
+	\item Some facts about dynamic median DT: node count of tree $= 14660$. Train Accuracy $=99.83\%$. Test Accuracy $=78.81\%$. Validation Accuracy $=78.43\%$.
+	\item \italb{Max-Split Array}$=[7, 0, 6, 0, 0, 0, 0, 0, 0, 0, 5, 2, 3, 0]$
+	\item \italb{Corresponding Split Thresholds}$=[[40.0, 34.0, 31.0, 29.0, 28.0, 25.5, 26.5], [], [180195.0, 224889.0, 265662.0, \\ 312832.0, 394927.0, 845954.5], [], [], [], [], [], [], [], [0.0, 9995.5, 7298.0, 4064.0, 3464.0], [0.0, 2258.0], [46.0, 55.0, 65.0], []]$
+	\item In this case, the tree severly overfits. This is clear from the extreme gap between train accuracy and test/validation accuracy. Almost entire data is fitted.
+	\item Comparing with (a), we see that a has bettern generalization(or less overfitting), as gap between train-test accuracies are less in former.
+	\item Although, this approach is more powerful as it has more freedom. If care is taken, like pruning/ setting max\_depth and others, this approach will outshine the former approach.
+\end{enumerate}
+\begin{figure}[h]
+\vspace*{-3cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{MedianDTPruning.png}
+\vspace*{-1.5cm}
+\caption{Pruning in Dynamic Median Splitting DT}
+\end{figure}
+Some facts about dynamic median DT: node count of tree $= 2230$. Train Accuracy $=85.27\%$. Test Accuracy $=81.57\%$. Validation Accuracy $=82.17\%$.
+\\ 
+
+\bld{Decision Tree of scikit-learn in Python}
+
+\begin{center}
+ \begin{tabular}{||c|c|c|c||} 
+ \hline
+ max\_depth & min\_sample\_split & min\_sample\_leaf & accuracy(\%) \\ [0.5ex] 
+ \hline\hline
+ None & 2 & 1 & 81.23\\ 
+ \hline
+ 1 & 2 & 1 & 74.5\\
+ \hline
+ 5 & 2 & 1 & 83.3\\
+ \hline
+ 10 & 2 & 1 & 84.9\\
+ \hline
+ 20 & 2 & 1 & 83.07\\
+ \hline
+ 10 & 5 & 1 & 84.9\\
+ \hline
+ 10 & 8 & 1 & 85\\
+ \hline
+ 10 & 16 & 1 & 84.9\\
+ \hline
+ 10 & 32 & 1 & 85.03\\
+ \hline
+ 10 & 32 & 4 & 85.03\\
+ \hline
+ 10 & 32 & 8 & 85.1\\
+ \hline
+ 10 & 32 & 10 & 85.033\\  
+ \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+	\item Best parameters appeared above are: $max\_depth=10$,$min\_sample\_split=32$,$min\_sample\_leaf=8$.
+	\item Corresponding accuracies: Train Accuracy $=86.01\%$. Test Accuracy $=84.87\%$. Validation Accuracy $=85.1\%$.
+	\item This model is \italb{better} than our pruned model in 1\_b. The validation as well as test accuracies are better by $\approx 2\%$.
+	\item This shows that \italb{constraining} the tree growth is quite a good method of controlling overfitting.
+	\item The above method undergoes no pruning, so pruning coupled with constraint tree growth can give optimal results.
+\end{enumerate}
+
+\bld{Random Forest of scikit-learn in Python}
+\begin{center}
+ \begin{tabular}{||c|c|c|c||} 
+ \hline
+ n\_estimators & bootstrap & max\_features & accuracy(\%) \\ [0.5ex] 
+ \hline\hline
+ 10 & False & auto & 84.1\\
+ \hline
+ 2 & True & auto & 82.06\\ 
+ \hline
+ 5 & True & auto & 82.9\\ 
+ \hline
+ 10 & True & auto & 84.76\\ 
+ \hline
+ 20 & True & auto & 85.1\\ 
+ \hline
+ 30 & True & auto & 85.23\\ 
+ \hline
+ 50 & False & auto & 84.2\\ 
+ \hline
+ 20 & True & 14 & 81.93\\
+ \hline
+ 10 & True & 8 & 84\\ 
+ \hline
+ 10 & True & 4 & 84.7\\ 
+ \hline
+ 10 & True & 2 & 84.5\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+	\item Best parameters appeared above are: $n\_estimators=30$,$bootstrap=True$,$max\_features=sqrt(14)$.
+	\item Corresponding accuracies: Train Accuracy $=99.81\%$. Test Accuracy $=84.57\%$. Validation Accuracy $=85.23\%$.
+	\item This model is \italb{better} than our pruned model in 1\_b and 1\_c. The validation as well as test accuracies are better by $\approx 2\%$.
+	\item But model is at par in training accuracy when compared with 1\_c.
+	\item Although we didn't see much gain in this example of Random Forest, in general, random forest classifiers are a powerful technique of fitting patterns preventing overfitting, and bringing stability.
+\end{enumerate}
+
+\section*{Neural Networks(NN)}
+\begin{enumerate}
+	\item Accuracy with Logistic Learner : Train Accuracy=45.79\%. Test Accuracy=38.33\%.
+	\item Accuracy with NN as specified in Assignment. Train Accuracy=90\%. Test Accuracy=85\%.
+	\item Our model \italb{outperforms} Logistic Regression model. 
+	\item Bad performance of Logistic Learner is justified from the fact that logistic regression is good to model \italb{linear boundaries}, whereas clearly, our model is able to identify non-linear patterns.
+
+\begin{figure}[h]
+\vspace*{-2cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{LogisticDB.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary Logistic Regression(Train Above, Test Below)}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{LogisticDB_Test.png}
+\end{figure}
+
+\begin{figure}[h]
+\vspace*{-2cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Train.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary NN for 5 hidden units(Train Above, Test Below)}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test.png}
+\end{figure}
+
+\begin{figure}[h]
+\vspace*{-2cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_1Best.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary NN for 1(above) and 2(below) hidden units along with Test data}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_2Best.png}
+\end{figure}
+
+\begin{figure}[h]
+\vspace*{-2cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_3.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary NN for 3(above) and 10(below) hidden units along with Test data}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_10Best.png}
+\end{figure}
+
+\begin{figure}[h]
+\vspace*{-2cm}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_20Best.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary NN for 20(above) and 40(below) hidden units along with Test data}
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_40Best.png}
+\end{figure}
+
+\clearpage
+\bld{Tabulated Accuracy figures on varying hidden units}
+\begin{center}
+ \begin{tabular}{||c|c|c||} 
+ \hline
+ hidden\_units & Train Accuracy(\%) & Test Accuracy(\%) \\ [0.5ex] 
+ \hline\hline
+ 1 & 65.79 & 60\\
+ \hline
+ 2 & 73.42 & 74.2\\ 
+ \hline
+ 3 & 89.7 & 85.8\\ 
+ \hline
+ 10 & 92.1 & 83.3\\ 
+ \hline
+ 20 & 93.4 & 85\\ 
+ \hline
+ 40 & 93.7 & 82.5\\ 
+ \hline
+\end{tabular}
+\end{center}
+	\item With 1 layer, best decision boundary is obtained for 3/5 hidden units.
+	\item Lower nodes result in underfitting and poor train/test scores.
+	\item Increasing hidden units beyond that starts to model noise in data. Decision boundary becomes overly complex, thereby increase train accuracy, but test accuracy starts deteriorating.
+\begin{figure}[h]
+\hspace*{-1.5cm}
+\centering
+\includegraphics[scale=0.8]{NN_DB_Test_2layer.png}
+\vspace*{-1.5cm}
+\caption{Decision Boundary 2 layer NN along with Test data}
+\end{figure}
+	\item With 2 hidden layers, train accuracy=90.8\% and test accuracy=86.7\%.
+	\item Comparing 2 layer model with 1 layer model, 2 layer model outperforms 1 layer model in test set accuracy(by $\approx 1\%$).
+	\item 2 Hidden layer models have higher representation and learning power as it undergoes 3 non-linear transforms before producing output.
+\end{enumerate}
+
+
+
+\end{document}
