@@ -7,6 +7,11 @@ The assignment consists on 4 parts. The 4 parts are placed in folder *Q{1,2,3,4}
 A generalized ***Regression*** class was created, which by default supported *Linear Regression*. Other necessary *Regression* classes can inherit it as base class and ***override*** necessary methods. Look at code for better understanding.
 
 
+*Note*: 
+1. Install necessary packages whenever necessary.
+2. You can turn off the plots as required by giving the requisite flags in Questions.
+3. All draw arguments accept `True` or `False` (They are case sensitive. Was too lazy to make them insensitive :p)
+
 *To run the code, type in linux shell:*
 
 Question 1:
@@ -28,7 +33,3 @@ Question 4:
 ``` 
 python3 <script> <x_data_path> <y_data_path> <Draw_Other_quadratic_part>
 ```
-
-*Note*: 
-1. Install necessary packages whenever necessary.
-2. You can turn off the plots as required by giving the requisite flags in Question 1.
